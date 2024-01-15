@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>oop's blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#">
+          <input type="text" placeholder="Full name" required id="name_sign"/>
+          <input type="text" placeholder="Email address" required id="email_sign"/>
+          <input type="password" placeholder="Password" required id="password_sign"/>
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <button onclick="signup(event)">Signup</button>
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Login</header>
+        <form action="#">
+          <input type="text" placeholder="Email address" required id="email_login"/>
+          <input type="password" placeholder="Password" required id="password_login"/>
+          <a href="#">Forgot password?</a>
+          <button onclick="login(event)">login</button>
+        </form>
+      </div>
+
+      <script type="module" src="auth.js">
+      </script>
+    </section>
+  </body>
+</html> 
