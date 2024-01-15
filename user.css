@@ -9,6 +9,10 @@ body {
     flex-direction: column;
     background: #f0faff;
   }
+  #content-box
+  {
+    padding-bottom: 40px;
+  }
 .card {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -81,7 +85,7 @@ body {
     left: 3px;
     right: 3px;
     background: #4070f4;
-    top: 80%;
+    top: 75%;
     border-radius: 8px;
     z-index: 2;
     box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
@@ -126,13 +130,13 @@ body {
     gap: 1rem;
   }
   
-  .card .bottom .bottom-bottom .social-links-container svg {
+  .card .bottom .bottom-bottom .social-links-container a i{
     height: 20px;
-    fill: white;
+    color: white;
     filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
   }
   
-  .card .bottom .bottom-bottom .social-links-container svg:hover {
+  .card .bottom .bottom-bottom .social-links-container a i:hover {
     fill: #4070f4;
     transform: scale(1.2);
   }
@@ -143,8 +147,11 @@ body {
     border: none;
     border-radius: 8px;
     font-size: 1.0rem;
-    padding: 0.1rem 0.4rem;
+    padding: 0.4rem 0.8rem;
+
     box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+    transition: 0.5s ease-in-out;
+
   }
   
   .card .bottom .bottom-bottom .button:hover {
@@ -210,13 +217,20 @@ body {
     padding: 0.4rem 0.8rem;
     box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 8px 8px 0px;
     /* position: relative; */
-    transition: ease-in-out 0.2s;
+    transition: 0.5s ease-in-out;
 
   }
   
   .backbutton button:hover {
     background: #4070f4;
     color: white;
+  }
+  .profile
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 50px 0 50px; */
   }
   #post-profile-text
   {
@@ -264,4 +278,21 @@ body {
       
     }
     
+  }
+
+  /* ==================== delete button */
+  .delete-button
+  {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    padding: 0.4rem 0.8rem;
+    box-shadow: rgba(58, 50, 50, 0.133) 0px 5px 5px 5px;
+    transition: 0.5s ease-in-out;
+  }
+  .delete-button:hover {
+    background: red;
+    color: white;
   }

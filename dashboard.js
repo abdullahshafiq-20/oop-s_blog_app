@@ -15,7 +15,6 @@ import {
 
 // ====================header====================
 let header = document.getElementById("header");
-
 window.addEventListener("scroll", () => {
   header.classList.toggle("shadow", window.scrollY > 0)
 })
@@ -138,46 +137,6 @@ window.addEventListener("DOMContentLoaded", async function () {
 
 
 
-async function OnlyUserPost() {
-  feedbck.innerHTML = "";
-
-  console.log("OnlyUserPost");
-  var uid = localStorage.getItem("uid");
-  console.log(uid, "uid");
-
-  if (!uid) {
-    location.replace("./index.html");
-    return;
-  }
-  var BlogArr = [];
-  const querySnapshot = await getDocs(collection(db, "posts"));
-  querySnapshot.forEach(function (doc) {
-    BlogArr.push({
-      title: doc.data().title,
-      desc: doc.data().description,
-      uid: doc.data().uid,
-      image: doc.data().image,
-      blogId: doc.id,
-      timestamp: doc.data().timestamp,
-
-    });
-  });
-  // console.log(BlogArr, "BlogArr");
-  for (var i = 0; i < BlogArr.length; i++) {
-    var blog = BlogArr[i];
-    // console.log(blog);
-    if (blog.uid == uid) {
-      console.log("conndition matched");
-      var UserImage = await getImageofUser(uid);
-      var timestamp = calculateTimeAgo(blog.timestamp);
-      feedbck.innerHTML += createUIforUser(blog.title, blog.desc, blog.image, blog.uid, blog.blogId, UserImage.name, UserImage.image, timestamp);
-    }
-  }
-
-}
-window.OnlyUserPost = OnlyUserPost;
-
-
 // logout function
 function logout() {
   localStorage.removeItem("uid");
@@ -193,12 +152,7 @@ document.getElementById('close-btn').addEventListener('click', function (event) 
 });
 
 
-async function deletePost(uniqueId) {
-  console.log(uniqueId);
-  await deleteDoc(doc(db, "posts", uniqueId));
-  OnlyUserPost();
-}
-window.deletePost = deletePost;
+
 
 
 // upload image function
@@ -235,7 +189,7 @@ async function addpost() {
   if (fileinput.files[0]) {
     imageURL = await imageUpload(fileinput.files[0]);
   } else {
-    imageURL = "./img/screen-shot-2023-04-13-at-10-35-31-am.webp";
+    imageURL = "https://firebasestorage.googleapis.com/v0/b/my-first-project-1-c98da.appspot.com/o/images%2Fclose-up-elegant-decoration-house-1.jpg?alt=media&token=3757c49e-cbc0-452f-8408-ced38f5d6eff";
   }
 
   var title = document.getElementById("title");
@@ -271,16 +225,11 @@ window.addpost = addpost;
 function createUI(title, description, image, uid, unID, userimage, username, timestamp) {
   var length = description.length;
   var uniqueId = unID; // Unique ID for each card
-  console.log(unID);
-  // if (length > 100) {
-  //   var des = description.slice(0, 100);
-  //   var des2 = description.slice(100, length);
-  // } else {
-  //   var des = description;
-  //   var des2 = "";
-  // }
-
-
+  // console.log(unID);
+  if(!userimage)
+  {
+    userimage="https://firebasestorage.googleapis.com/v0/b/my-first-project-1-c98da.appspot.com/o/images%2Fscreen-shot-2023-04-13-at-10-35-31-am.webp?alt=media&token=b014caf2-8194-4b96-b122-49c06b561240"
+  }
   var UI = `
   <div class="post-box tech">
   <img src="${image}" alt="" class="post-img">
@@ -366,9 +315,12 @@ window.createUIforUser = createUIforUser;
 
 
 function uiForNav(name, image) {
+  if (!image) {
+    image = "https://firebasestorage.googleapis.com/v0/b/my-first-project-1-c98da.appspot.com/o/images%2Fscreen-shot-2023-04-13-at-10-35-31-am.webp?alt=media&token=b014caf2-8194-4b96-b122-49c06b561240";
+  }
   var UI = `
   <div class="avatar">
-  <img src=${image}>
+  <img src=${image} alt="">
 </div>
 <div class="avatar-text">
   <p>${name}</p>
