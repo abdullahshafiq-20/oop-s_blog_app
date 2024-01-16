@@ -54,8 +54,23 @@ window.backbtn = backbtn;
 
 window.addEventListener("DOMContentLoaded", async function () {
 
+
   var card = document.getElementById("card");
   var uid = localStorage.getItem("uid");
+  var blogarray=[];
+  const querySnapshot_blog = await getDocs(collection(db, "posts"));
+  querySnapshot_blog.forEach(function (doc) {
+    blogarray.push({
+      uid: doc.data().uid,
+    });
+  }
+  );
+  for (var i = 0; i < blogarray.length; i++) {
+    var blog = blogarray[i];
+    if (blog.uid == uid) {
+      count++;
+    }
+  }
   var userarray = [];
   const querySnapshot_user = await getDocs(collection(db, "users"));
   querySnapshot_user.forEach(function (doc) {
@@ -83,13 +98,14 @@ window.addEventListener("DOMContentLoaded", async function () {
       image: doc.data().imageURL,
     });
   });
+  console.log(count);
   for (var i = 0; i < userarray.length; i++) {
     var user = userarray[i];
     // console.log(uid);
     if (user.uid == uid || edited == true) {
       console.log("conndition matched");
-      console.log(user.image);
-      card.innerHTML += CreateUI_profile(user.name, user.about, user.image, user.uid);
+      // console.log(user.image);
+      card.innerHTML += CreateUI_profile(user.name, user.about, user.image, user.uid, count);
     }
   }
   // console.log(userarray);
@@ -132,7 +148,6 @@ window.deletePost = deletePost;
 
 window.addEventListener("DOMContentLoaded", async function () {
   // feedbck.innerHTML = "";
-
   console.log("OnlyUserPost");
   var uid = localStorage.getItem("uid");
   console.log(uid, "uid");
@@ -305,7 +320,8 @@ function imageUpload(file) {
 }
 window.imageUpload = imageUpload;
 
-function CreateUI_profile(name, bio, image, uid) {
+
+function CreateUI_profile(name, bio, image, uid, count) {
   var new_image= image;
   
   console.log("create ui profile");
@@ -314,29 +330,32 @@ function CreateUI_profile(name, bio, image, uid) {
     console.log("image not found");
   }
   var ui = `
-  <button class="mail ">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-</button>
-<div class="profile-pic">
-  <img src=${image}">
-</div>
-<div class="bottom ">
-  <div class="content">
-      <span class="name">${name}</span>
-      <span class="about-me">${bio}</span>
-  </div>
- <div class="bottom-bottom">
-  <div class="social-links-container">
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#"><i class="fa-brands fa-github"></i></a>
-
-  </div>
-  <button class="button" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-edit"></i></button>
- </div>
-</div>
+  <div class="page-1">
+                <img src=${image} alt="">
+            </div>
+            
+            <div class="page-2">
+                <div class="p-name">
+                    <h3>${name}</h3>
+                </div>
+                <div class="p-about">
+                    <h3>"${bio}"</h3>
+                </div>
+                <div class="p-social">
+                    <a href="https://abdullahshafiq.online/"><i class="fa-solid fa-user"></i></a>
+                    <a href="https://abdullahshafiq.online/"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://abdullahshafiq.online/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="blog-created">
+                    <h4>${count}</h4>
+                    <p>Blogs Created</p>
+                </div>
+            </div>
+            <div class="page-3">
+                <button  data-bs-toggle="modal" data-bs-target="#myModal">
+                    <i class="fa-solid fa-edit"></i>
+                </button>
+            </div>
   `
   image = new_image;
   return ui;

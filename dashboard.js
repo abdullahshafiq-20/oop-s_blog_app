@@ -59,7 +59,7 @@ var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
 })
 var userbtn = document.getElementById("userbtn");
 var feedbtn = document.getElementById("feedbtn");
-
+var curved= document.getElementById("curved");
 // if user already login on same pc
 window.addEventListener("DOMContentLoaded", function () {
   var uid = localStorage.getItem("uid");
@@ -102,7 +102,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     if (user.uid == uid) {
       avatar.innerHTML = uiForNav(user.name, user.image);
       var UserImage = await getImageofUser(user.uid);
-      title_top.innerHTML = `Welcome ${UserImage.name}`;
+      curved.innerHTML = `Welcome ${UserImage.name}`;
 
     }
   }
@@ -251,8 +251,6 @@ function createUI(title, description, image, uid, unID, userimage, username, tim
 window.createUI = createUI;
 
 
-
-
 function imageUpload(file) {
   return new Promise(function (resolve, reject) {
     // Create the file metadata
@@ -321,9 +319,6 @@ function uiForNav(name, image) {
   var UI = `
   <div class="avatar">
   <img src=${image} alt="">
-</div>
-<div class="avatar-text">
-  <p>${name}</p>
 </div>
   `;
   return UI;
