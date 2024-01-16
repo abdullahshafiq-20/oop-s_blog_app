@@ -62,20 +62,34 @@ body {
     align-items: flex-start;
     margin-top: 40px;
   }
-  .page-2 h3
+  /* .page-2 h3
   {
     width: 100%;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 900;
     color: #172317;
     font-style: italic;
 
+  } */
+  .p-name h3
+  {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #172317;
+    font-style: italic;
   }
   .page-2 h3 span{
     font-size: 0.8rem;
     font-weight: normal;
     color: rgba(96, 75, 74, 0.5);
     font-style: normal;
+  }
+  .p-about h3 
+  {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #172317;
+    font-style: italic;
   }
   .p-social
   {
@@ -127,7 +141,7 @@ body {
   }
   .blog-created p
   {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-style: italic;
   }
   .page-3
@@ -351,6 +365,7 @@ body {
       border-left: none;
       border-bottom: 4px solid;
       border-image: linear-gradient(43deg, #4568DC 0%, #B06AB3 100%)2;
+      padding-left: 0;
     }
     
   }
