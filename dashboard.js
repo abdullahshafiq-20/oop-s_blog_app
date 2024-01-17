@@ -11,10 +11,59 @@ import {
   ref,
   storage,
   uploadBytesResumable,
+  app,
 } from "./firbase.js";
+
+
 // import { callthis } from "./postpage.js";
 
 // ====================header====================
+
+
+
+
+function initializeLocomotiveScroll() {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('#main'),
+    smooth: true
+  });
+}
+
+// Delay execution by 5 seconds
+
+
+
+// Function to initialize LocomotiveScroll
+
+
+ 
+  // const scroll = new LocomotiveScroll({
+  //   el: document.querySelector('#main'),
+  //   smooth: true
+  // });
+  // Delay execution by 5 seconds
+
+
+
+// Reference to your Firestore collection
+// const firestore = getFirestore();
+// const dataCollection = collection(firestore, 'posts'); // Replace with your actual collection name
+
+// // Fetch data from Firestore
+// getDocs(dataCollection)
+//   .then((querySnapshot) => {
+//     // Data has been loaded, call the function to initialize LocomotiveScroll
+//     initializeLocomotiveScroll();
+//     console.log("Data loaded successfully!");
+    
+//   })
+//   .catch((error) => {
+//     console.error("Error loading Firestore data:", error);
+//   });
+
+
+
+
 let header = document.getElementById("header");
 window.addEventListener("scroll", () => {
   header.classList.toggle("shadow", window.scrollY > 0)
@@ -32,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     // Hide loader after some time (simulating loaded content)
     hideLoader();
-  }, 2000); // Change this to your desired loading time
+  }, 2500); // Change this to your desired loading time
 });
 
 function showLoader() {
@@ -376,7 +425,6 @@ function postpage(element) {
   window.location.href = "postpage.html";
 }
 window.postpage = postpage;
-
 
 
 

@@ -9,14 +9,27 @@
     box-sizing: border-box;
 
 }
-body{
+/* html, body {
+    height: 100%;
+    width: 100%;
+} */
+/* body{
     background-color: #1a1e21;
+} */
+#main
+{
+    /* position: relative; */
+    /* min-height: fit-content; */
 }
 .content-box
 {
     z-index: 5;
 }
 
+#myModal
+{
+    z-index: 9999;
+}
 /* root values */
 :root{
     --container-mine-color: #1a1e21;
@@ -390,7 +403,7 @@ a{
 }
 
 footer{
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: auto;
     padding: 50px 100px;
