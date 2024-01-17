@@ -12,6 +12,7 @@ import {
   storage,
   uploadBytesResumable,
 } from "./firbase.js";
+// import { callthis } from "./postpage.js";
 
 // ====================header====================
 let header = document.getElementById("header");
@@ -19,9 +20,8 @@ window.addEventListener("scroll", () => {
   header.classList.toggle("shadow", window.scrollY > 0)
 })
 
+
 // ====================header====================
-
-
 
 // ====================loader====================
 document.addEventListener("DOMContentLoaded", function () {
@@ -50,6 +50,8 @@ function hideLoader() {
 // ====================loader====================
 
 
+var uniqIdforPostpage;
+var content = document.getElementById("content");
 
 var title_top = document.getElementById("top-title");
 const feedbck = document.getElementById("post_container");
@@ -74,8 +76,9 @@ function myprofile() {
 }
 window.myprofile = myprofile;
 
+// ====================
 
-
+// =========================
 
 window.addEventListener("DOMContentLoaded", async function () {
   feedbck.innerHTML = "";
@@ -178,6 +181,12 @@ document.getElementById('file-input').addEventListener('change', function () {
   }
 });
 
+//=======================================================
+
+
+
+////////////////////////////==================================
+
 
 
 // add post function
@@ -234,7 +243,7 @@ function createUI(title, description, image, uid, unID, userimage, username, tim
   <div class="post-box tech">
   <img src="${image}" alt="" class="post-img">
   
-  <a href="#" class="post-title">${title}</a>
+  <a href="#" id=${uniqueId} onclick="postpage(this)" class="post-title">${title}</a>
   
   <p class="post-description">${description}</p>
   <div class="profile">
@@ -309,7 +318,6 @@ function imageUpload(file) {
   });
 }
 window.imageUpload = imageUpload;
-window.createUIforUser = createUIforUser;
 
 
 function uiForNav(name, image) {
@@ -361,3 +369,16 @@ function calculateTimeAgo(timestamp) {
   }
   return timeAgo;
 }
+
+
+function postpage(element) {
+  localStorage.setItem("blogId", element.id);
+  window.location.href = "postpage.html";
+}
+window.postpage = postpage;
+
+
+
+
+
+

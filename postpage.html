@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="dashboard.css"> -->
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="user.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        /* font-family: sans-serif; */
+        font-family: 'Poppins', sans-serif;
+        background-color: #F9F7F4;
+
+
+    }
+
+    #content-box {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #F9F7F4;
+        margin-top: 40px;
+    }
+
+    #content {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+    }
+    #post-image{
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+    #post-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    #post-title
+    {
+        width: 80%;
+        margin-bottom: 0px;
+        border-bottom: 1px solid #ccc;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* border: 1px solid #ccc; */
+        padding-bottom :40px; 
+    }
+    #post-title p{
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-style: italic;
+        color: #555;
+    }
+    #post-title h1{
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 0px;
+        border-left: 8px solid;
+        border-image: linear-gradient(43deg, #4568DC 0%, #B06AB3 100%)2;
+        padding-left: 5px;
+    }
+    #post-content
+    {
+        width: 80%;
+        /* margin-bottom: 0px; */
+        /* border-bottom: 1px solid #ccc; */
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* border: 1px solid #ccc; */
+        padding-bottom :40px; 
+        padding: 0 5px 20px 5px;
+    
+    }
+    #post-content p{
+        font-size: 16px;
+        font-weight: 0;
+        margin-bottom: 10px;
+        /* font-style: italic; */
+        color: #555;
+        text-align: center;
+    
+    }
+    .post-footer{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: nowrap;
+    }
+    .post-footer i
+    {
+        color: #555;
+    }
+    .post-footer-left{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+    }
+    .post-footer-left-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        color: #555;
+    }
+    .post-footer-left-item span{
+        font-size: 15px;
+        font-weight: 500;
+        color: #555;
+    }
+
+    .post-footer-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+    }
+    .post-footer-right-item span{
+        font-size: 15px;
+        font-weight: 500;
+        color: #555;
+    }
+    .post-footer-right-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+    .post-footer-right-item span{
+        font-size: 15px;
+        font-weight: 500;
+        color: #555;
+    }
+    .post-footer-right-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 768px) {
+        #content-box 
+        {
+            width: 90%;
+        }
+        #content-box .backbutton
+    {
+      /* padding: 10px 0 20px 0; */
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: translate(-420%,-15%);
+      z-index: 10000;
+    }
+        #content {
+            width: 88%;
+        }
+        #post-title
+        {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #post-title h1{
+            font-size: 25px;
+
+        }
+        #post-content p{
+            font-size: 14px;
+        }
+        .post-footer
+        {
+            width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        /* border: 1px solid #ccc; */
+        padding: 10px;
+        gap: 10px;
+
+        }
+        .post-footer-left{
+            /* width: 50%; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            /* border: 1px solid #ccc; */
+            /* background: #000; */
+        }
+        .post-footer-left{
+            /* width: 50%; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .post-footer-left-item span{
+            font-size: 13px;
+        }
+        .post-footer-left-item span{
+            font-size: 13px;
+        }
+        .post-footer-right-item span{
+            font-size: 13px;
+        }
+
+        
+    }
+
+
+</style>
+
+<body>
+    <div id="content-box">
+        <div class="backbutton">
+            <button onclick="backbtn()"><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+        <div id="content">
+            <!-- <div id="post-image">
+                <img src="./images/bg.png" alt="">
+            </div>
+            <div id="post-title">
+                <h1>Post Title</h1>
+                <p>Author :</p>
+            </div>
+            <div id="post-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolorem quod laudantium beatae nisi dolores, quisquam, aperiam architecto, voluptatem culpa sed possimus? Alias et id, distinctio odit excepturi error sint.</p>
+            </div> -->
+            <!-- <div class="post-footer">
+                <div class="post-footer-left">
+                    <div class="post-footer-left-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="post-footer-left-item">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-footer-left-item">
+                        <i class="fa-solid fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+                <div class="post-footer-right">
+                    <div class="post-footer-right-item">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <span>Save</span>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+</body>
+<script type="module" src="postpage.js"></script>
+
+</html>

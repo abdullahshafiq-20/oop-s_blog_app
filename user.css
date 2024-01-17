@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #f0faff;
+    background: #F9F7F4;
     overflow-x: hidden!important;
   }
   #content-box
@@ -198,13 +198,14 @@ body {
 
   .backbutton button 
   {
-    background: white;
+    background: #F9F7F4;
     color: black;
     border: none;
     border-radius: 8px;
     font-size: 1.0rem;
     padding: 0.4rem 0.8rem;
-    box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 8px 8px 0px;
+    border: 1px solid #ccc;
+    /* box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 8px 8px 0px; */
     /* position: relative; */
     /* transition: 0.5s ease-in-out; */
 

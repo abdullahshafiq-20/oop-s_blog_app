@@ -716,9 +716,10 @@ footer p{
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color:transparent;
+    /* background-color:transparent; */
     color: #111111;
     transition: 1s ease;
+    object-fit:cover;
 
 }
 .avatar img:hover

@@ -193,7 +193,8 @@ function createUI(title, description, image, uid, unID, UserImage, username, tim
     <div class="post-box tech">
     <img src="${image}" alt="" class="post-img">
     
-    <a href="#" class="post-title">${title}</a>
+    <a href="#" id=${uniqueId} onclick="postpage(this)" class="post-title">${title}</a>
+
     
     <p class="post-description">${description}</p>
     <div class="profile">
@@ -399,3 +400,10 @@ function calculateTimeAgo(timestamp) {
   return timeAgo;
 }
 window.calculateTimeAgo = calculateTimeAgo;
+
+
+function postpage(element) {
+  localStorage.setItem("blogId", element.id);
+  window.location.href = "postpage.html";
+}
+window.postpage = postpage;
