@@ -22,11 +22,12 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 0 50px 0 10px;
+    padding: 0 15px 0 10px;
     border: 1px solid #ccc;
     flex-direction: row;
     margin-top: 40px;
     border-radius: 8px;
+    /* gap: 10px; */
 
   }
   .page-1{
@@ -146,17 +147,19 @@ body {
   }
   .page-3
   {
-    /* width: 20%; */
+    width: 20%;
     /* padding: 5px; */
     /* border: 1px solid #ccc; */
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     margin-top: 10px;  
-    position: absolute;
-    left: 83%;   
+    /* position: absolute; */
+    /* border: 1px solid red; */
+    /* left: 83%; */
   }
   .page-3 button{
+    position: relative;
     background: #F9F7F4;
     color: black;
     /* border: none; */
@@ -166,10 +169,14 @@ body {
     padding: 0.6rem 0.8rem;
     /* position: relative; */
     /* transition: 0.5s ease-in-out; */
-    display: flex;
+    /* display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-end; */
     /* margin-left: 20px; */
+    /* left: 1033%; */
+ 
+
+
   }
   .page-3 button:hover
   {
