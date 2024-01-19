@@ -1,6 +1,9 @@
 # oop's Blog App 🚀
 
 Welcome to the Firebase Blog App! This dynamic blog application allows users to sign up, create posts, update their profiles, and interact with a community of bloggers.
+
+<img src="cover.svg" alt="Cover Image" style="border-radius: 10;">
+
 ## Live Demo 🌐
 
 Check out the live demo of the this App [here](https://oops-blog.netlify.app/).
