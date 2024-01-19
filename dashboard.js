@@ -173,6 +173,11 @@ window.addEventListener("DOMContentLoaded", async function () {
     });
   });
   console.log(BlogArr, "BlogArr");
+  var countforblogs=document.getElementById("countforblogs");
+  countforblogs.innerHTML= `
+  <h3>Trending Blogs (${BlogArr.length})</h3>
+  `;
+
 
   for (var i = 0; i < BlogArr.length; i++) {
     var blog = BlogArr[i];
