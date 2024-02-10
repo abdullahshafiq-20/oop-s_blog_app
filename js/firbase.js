@@ -29,7 +29,6 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBmEcMc_jHCDGqlqs6qZ8xC14A9UNrlmoY",
@@ -45,7 +44,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const storage = getStorage();
-signInWithRedirect(auth, provider);
+
 
 export {
   initializeApp,
@@ -69,8 +68,4 @@ export {
   child,
   serverTimestamp,
   uploadBytesResumable,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithRedirect,
-  getRedirectResult,
 }
