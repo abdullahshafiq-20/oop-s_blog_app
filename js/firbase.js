@@ -12,22 +12,24 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-import{
-    push,
-    child,
+import {
+  push,
+  child,
 }
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 import {
   getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBmEcMc_jHCDGqlqs6qZ8xC14A9UNrlmoY",
@@ -38,31 +40,37 @@ const firebaseConfig = {
   appId: "1:1012241146158:web:a5bc95e7379c334635dabf"
 };
 
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth=getAuth(app);
+const auth = getAuth(app);
 const storage = getStorage();
+signInWithRedirect(auth, provider);
 
-export{
-    initializeApp,
-    getFirestore,
-    collection,
-    addDoc,
-    getDocs,
-    doc,
-    deleteDoc,
-    updateDoc,
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    db,
-    app,
-    auth,
-    getDownloadURL,
-    ref,
-    storage,
-    push,
-    child,
-    serverTimestamp,
-    uploadBytesResumable,
+export {
+  initializeApp,
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  deleteDoc,
+  updateDoc,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  db,
+  app,
+  auth,
+  getDownloadURL,
+  ref,
+  storage,
+  push,
+  child,
+  serverTimestamp,
+  uploadBytesResumable,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
 }

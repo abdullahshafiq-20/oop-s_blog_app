@@ -17,7 +17,15 @@ import {
     ref,
     storage,
     uploadBytesResumable,
+    serverTimestamp,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signInWithRedirect,
+    getRedirectResult,
+    onAuthStateChanged,
 } from "./firbase.js";
+
+
 
 
 const wrapper = document.querySelector(".wrapper"),
